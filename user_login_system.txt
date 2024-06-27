@@ -1,0 +1,7 @@
+user,password
+brian,bb
+yaro,yy
+daniel,dd
+cindy,cc
+shell,ss
+zing,zz
