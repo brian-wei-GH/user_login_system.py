@@ -67,7 +67,7 @@ FUNC_LIST = {
     }
 while True:
     SELECT_LIST = ["1", "2", "3", "4"]
-    USER_SELECT = input("Enter your choice: 1.register 2.login 3.show users 4.clear file q.exist ")
+    USER_SELECT = input("Enter your choice: 1.register 2.login 3.show users 4.clear file q.exit ")
     if USER_SELECT.upper() == "Q":
         break
     if USER_SELECT not in SELECT_LIST:
