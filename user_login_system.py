@@ -38,7 +38,7 @@ def login():
                             print("please re-enter your name")
                             break
                         user_n_psw = security_md5(user_n_psw)
-                        if user_n_psw == parts[1]:  # will find all psw, not match the same one
+                        if user_n_psw == parts[1]:  
                             print("welcome {} to login".format(user_n_log))
                             return
                         else:
