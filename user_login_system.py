@@ -1,3 +1,5 @@
+from password_encode import security_md5
+
 def register():
     while True:
         line_list = []
@@ -13,6 +15,7 @@ def register():
                     re_name = False
         if re_name == True:
             user_psw = input("Enter your password: ")
+            user_psw = security_md5(user_psw)
             user_data = "{},{}\n".format(user_name, user_psw)
 
             with open("user_login_system.txt", "a") as file:
@@ -34,6 +37,7 @@ def login():
                         if user_n_psw.upper() == "Q":
                             print("please re-enter your name")
                             break
+                        user_n_psw = security_md5(user_n_psw)
                         if user_n_psw == parts[1]:  # will find all psw, not match the same one
                             print("welcome {} to login".format(user_n_log))
                             return
