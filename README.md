@@ -10,4 +10,6 @@ environment: {
     pycharm: 2024.1.3 pro
 }
 
-version update 6/29/2024  -- add hashlib to improve user security
+version update 6/29/2024  -- add "hashlib" to improve user security
+
+version update 7/1/2024 -- add "datetime" to record user register time
