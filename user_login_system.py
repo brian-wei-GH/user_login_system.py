@@ -1,8 +1,9 @@
 from password_encode import security_md5
+import datetime
+
 
 def register():
     while True:
-        line_list = []
         re_name = True
         user_name = input("Enter your name: ")
         with open("user_login_system.txt", "r") as file:
@@ -13,10 +14,11 @@ def register():
                 if user_name == parts[0]:
                     print("Username is already taken")
                     re_name = False
-        if re_name == True:
+        if re_name is True:
             user_psw = input("Enter your password: ")
             user_psw = security_md5(user_psw)
-            user_data = "{},{}\n".format(user_name, user_psw)
+            res_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            user_data = "{},{},{}\n".format(user_name, user_psw, res_time)
 
             with open("user_login_system.txt", "a") as file:
                 file.write(user_data)
@@ -38,7 +40,7 @@ def login():
                             print("please re-enter your name")
                             break
                         user_n_psw = security_md5(user_n_psw)
-                        if user_n_psw == parts[1]:  
+                        if user_n_psw == parts[1]:
                             print("welcome {} to login".format(user_n_log))
                             return
                         else:
@@ -54,14 +56,15 @@ def show_users():
             line_list.append(parts)
             line_list.sort()
         for line_sort in line_list:
-            line_str = "{},{}\n".format(line_sort[0], line_sort[1])
+            line_str = "{},{},{}\n".format(line_sort[0], line_sort[1], line_sort[2])
             line_str = line_str.strip()
             print(line_str)
 
 
 def clear_file():
     with open("user_login_system.txt", "w") as file:
-        file.write("user,password\n")
+        file.write("user,password,datetime\n")
+
 
 FUNC_LIST = {
         "1": register,
