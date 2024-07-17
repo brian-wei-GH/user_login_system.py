@@ -6,7 +6,7 @@ the system has 4 functions.
    4. for clear txt file
 
 environment: {
-    python: 3.12.4
+    python: 3.12.4,
     pycharm: 2024.1.3 pro
 }
 
